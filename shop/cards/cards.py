@@ -38,7 +38,7 @@ def addcard():
     except Exception as e:
         print(e)
     finally:
-        return redirect(request.referrer)
+        return redirect(request.referrer) and redirect(url_for('home'))
 
 
 @app.route('/carts')
@@ -91,11 +91,12 @@ def deleteitem(id):
         print(e)
         return redirect(url_for('getCart'))
 
+
 @app.route('/clearcart')
 def clearcart():
     try:
         session.clear()
-        session.pop('Shoppingcart',None)
+        session.pop('Shoppingcart', None)
         return redirect(url_for('home'))
     except Exception as e:
         print(e)

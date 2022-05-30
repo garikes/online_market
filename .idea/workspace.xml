@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b506d641-17b6-4095-bbc1-26d9631c6c26" name="Changes" comment="" />
+    <list default="true" id="b506d641-17b6-4095-bbc1-26d9631c6c26" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/61146acd-7033-4e68-9396-42d8db396ca3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/61146acd-7033-4e68-9396-42d8db396ca3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/online_market.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/online_market.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/cards/cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/cards/cards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/customers/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/customers/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/myshop.db" beforeDir="false" afterPath="$PROJECT_DIR$/shop/myshop.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/products/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/products/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/customer/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/customer/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/products/addbrand.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/addbrand.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +43,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/myvenv" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -44,9 +58,9 @@
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/program_kursova&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Python/online_market&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PythonContentEntriesConfigurable&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -77,6 +91,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="online_market" type="PythonConfigurationType" factoryName="Python">
+      <module name="online_market" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shop/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -124,7 +160,12 @@
       <workItem from="1652987225639" duration="2819000" />
       <workItem from="1652992555805" duration="39523000" />
       <workItem from="1653086412790" duration="125000" />
-      <workItem from="1653086639141" duration="88270000" />
+      <workItem from="1653086639141" duration="89017000" />
+      <workItem from="1653338876109" duration="530000" />
+      <workItem from="1653340584127" duration="472000" />
+      <workItem from="1653507490108" duration="4983000" />
+      <workItem from="1653598462842" duration="144000" />
+      <workItem from="1653835649259" duration="5235000" />
     </task>
     <servers />
   </component>
@@ -143,7 +184,8 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/online_market$online_market.coverage" NAME="online_market Coverage Results" MODIFIED="1653338991775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/online_market$main.coverage" NAME="main Coverage Results" MODIFIED="1652987882645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/online_market$run.coverage" NAME="run Coverage Results" MODIFIED="1653324786751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/online_market$run.coverage" NAME="run Coverage Results" MODIFIED="1653913899364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
