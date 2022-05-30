@@ -32,6 +32,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -153,7 +154,7 @@
       <workItem from="1653340584127" duration="472000" />
       <workItem from="1653507490108" duration="4983000" />
       <workItem from="1653598462842" duration="144000" />
-      <workItem from="1653835649259" duration="6409000" />
+      <workItem from="1653835649259" duration="8432000" />
     </task>
     <task id="LOCAL-00001" summary="login on admin, btn in log , redirect home">
       <created>1653914777099</created>
