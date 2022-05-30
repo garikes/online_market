@@ -18,7 +18,7 @@ class CustomerRegisterForm(FlaskForm):
     contact = StringField('Contact: ', [validators.DataRequired()])
     address = StringField('Address: ', [validators.DataRequired()])
 
-    profile = FileField('Profile', validators=[FileAllowed(['jpg', 'png', 'jpeg', 'gif'])])
+    profile = FileField('Procfile', validators=[FileAllowed(['jpg', 'png', 'jpeg', 'gif'])])
     submit = SubmitField('Register')
 
     def validate_username(self, username):
