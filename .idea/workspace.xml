@@ -2,35 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b506d641-17b6-4095-bbc1-26d9631c6c26" name="Changes" comment="login on admin, btn in log , redirect home">
-      <change afterPath="$PROJECT_DIR$/shop/static/icons/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop/static/icons/icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop/templates/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop/templates/products/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/online_market.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/online_market.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/customers/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/customers/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/myshop.db" beforeDir="false" afterPath="$PROJECT_DIR$/shop/myshop.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/products/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/products/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/static/images/56eeb17bb617bdc6fc48.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/static/images/93011518d8e247905198.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/static/images/995298d736ce00fc1b5a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/products/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/products/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/templates/admin/brand.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/admin/brand.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/admin/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/customer/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/customer/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/customer/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/customer/order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/customer/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/customer/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/products/addbrand.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/addbrand.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/products/addproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/addproduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/templates/products/carts.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/carts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/products/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/products/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/products/single_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/single_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/products/updatebrand.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/updatebrand.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/templates/products/updateproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/updateproduct.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,13 +38,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/shop/products/routes.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/run.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/shop/__init__.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/shop/templates/products/index.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/flask_uploads.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/shop/products/routes.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/shop/customers/routes.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/shop/templates/products/index.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/shop/templates/layout.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/flask_uploads.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/shop/templates/navbar.html" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">

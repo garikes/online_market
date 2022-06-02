@@ -1,7 +1,7 @@
 {% extends "layout.html"%}
 {% block content %}
 {% include 'navbar.html'%}
-<div class="container" style="margin-top: 100px; margin-bottom: 30px">
+<div class="container" style="margin-top: 100px;">
     {% include '_messages.html'%}
     <div class="row">
         <div class="col-md-12">
@@ -59,18 +59,19 @@
                 {% endfor %}
                 </tbody>
             </table>
-            <table class="table table-sm">
-                <tr>
-                    <td><a href="/" class="btn btn-success">Check Out</a></td>
-                    <td><a href="{{url_for('get_order')}}" class="btn btn-success">Order Now</a> </td>
-                    <td width="35%"></td>
-                    <td><h5>Tax: ${{tax}}</h5></td>
-                    <td><h5>Total: ${{grandtotal}}</h5></td>
-                    <td><a href="{{url_for('clearcart')}}" class="btn btn-danger btn-sm float-right mr-4"> Clear cart</a></td>
-                </tr>
-            </table>
         </div>
     </div>
+    <table class="table table-sm" style="margin-top: 100px">
+        <tr style="margin-top: 20px">
+            <td><a href="{{url_for('clearcart')}}" class="btn btn-danger float-right mr-4"> Clear cart</a></td>
+            <td width="35%"></td>
+            <td><h5>Tax: ${{tax}}</h5></td>
+            <td><h5>Total: ${{grandtotal}}</h5></td>
+            <td><a href="{{url_for('get_order')}}" class="btn btn-success">Order Now</a> </td>
+        </tr>
+        <hr class="dropdown-divider">
+    </table>
+
 </div>
 {% include 'footer.html' %}
 {% endblock content%}
