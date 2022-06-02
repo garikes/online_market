@@ -1,12 +1,14 @@
 from flask import render_template, session, request, redirect, url_for, flash, current_app, make_response
 from flask_login import login_required, current_user, logout_user, login_user
 from shop import app, db, photos, search, bcrypt, login_manager
-from .forms import CustomerRegisterForm, CustomerLoginForm
+from .forms import CustomerRegisterForm, CustomerLoginForm, CustomerUpdateForm
 from .model import Register, CustomerOrder
 import secrets
 import os
 import pdfkit
 import stripe
+
+from ..products.routes import categories, brands
 
 buplishable_key = 'pk_test_51L2dsPGGVqgwPrgwJO0OgQLQImHo8ovqtn0xj91OnSISjkIKnWaDB6KRddENtxmxPLUdrr6S162q3riNrgqa9vXz00jnwWAhG9'
 stripe.api_key = 'sk_test_51L2dsPGGVqgwPrgwy84LTBkLLqYcJ4BClCifFNEBDdmsvOyOYfzgvyuHUsPoRoN4sdpNoyqlH42G4vWAKIngLqwB00dOljkwMX'
@@ -52,8 +54,60 @@ def customer_register():
         db.session.add(register)
         flash(f'Welcome {form.first_name.data} {form.last_name.data} Thank you for register', 'success')
         db.session.commit()
-        return redirect(url_for('login'))
+        return redirect(url_for('customerLogin'))
     return render_template('customer/register.html', form=form)
+
+
+@login_required
+@app.route('/customerupdate/', methods=["POST", "GET"])
+def customer_update():
+    if current_user.is_authenticated:
+        customer_id = current_user.id
+    customer = Register.query.get_or_404(customer_id)
+    form = CustomerUpdateForm()
+    print(customer.password)
+    if request.method == "POST":
+        if form.password.data == "":
+            customer.password = customer.password
+        else:
+            hash_password = bcrypt.generate_password_hash(form.password.data)
+            customer.password = hash_password
+        customer.first_name = form.first_name.data
+        customer.last_name = form.last_name.data
+        customer.username = form.username.data
+        customer.email = form.email.data
+        customer.country = form.country.data
+        customer.city = form.city.data
+        customer.contact = form.contact.data
+        customer.address = form.address.data
+        if request.files.get('profile'):
+            try:
+                os.unlink(os.path.join(current_app.root_path, "static/images/" + customer.profile))
+                customer.profile = photos.save(request.files.get('profile'), name=secrets.token_hex(10) + ".")
+            except:
+                customer.profile = photos.save(request.files.get('profile'), name=secrets.token_hex(10) + ".")
+        db.session.commit()
+        return redirect(url_for('customer_update'))
+    form.first_name.data = customer.first_name
+    form.last_name.data = customer.last_name
+    form.username.data = customer.username
+    form.email.data = customer.email
+    form.country.data = customer.country
+    form.city.data = customer.city
+    form.contact.data = customer.contact
+    form.address.data = customer.address
+    return render_template('customer/updateprofile.html', form=form, customer=customer, categories=categories(),
+                           brands=brands())
+
+
+@login_required
+@app.route('/profileinfo')
+def profile_info():
+    if current_user.is_authenticated:
+        customer_id = current_user.id
+    customer = Register.query.get_or_404(customer_id)
+    return render_template('customer/profileinfo.html', customer=customer, categories=categories(),
+                           brands=brands())
 
 
 @app.route('/customer/login', methods=['GET', 'POST'])
@@ -160,3 +214,35 @@ def get_pdf(invoice):
             # response.headers['content-Disposition'] = 'atteched; filename=' + invoice + '.pdf'
             return response
     return request(url_for('orders'))
+
+
+@app.route('/customerorder')
+@login_required
+def customer_order():
+    if current_user.is_authenticated:
+        customer_id = current_user.id
+    orders = CustomerOrder.query.filter_by(customer_id=customer_id)
+    return render_template('customer/customer_order.html', categories=categories(),
+                           brands=brands(), orders=orders)
+
+@app.route('/orderss/<invoice>')
+@login_required
+def orderss(invoice):
+    if current_user.is_authenticated:
+        grandTotal = 0
+        subTotal = 0
+        customer_id = current_user.id
+        customer = Register.query.filter_by(id=customer_id).first()
+        orders = CustomerOrder.query.filter_by(customer_id=customer_id, invoice=invoice).order_by(
+            CustomerOrder.id.desc()).first()
+        for _key, product in orders.orders.items():
+            discount = (product['discount'] / 100) * float(product['price'])
+            subTotal += float(product['price']) * int(product['quantity'])
+            subTotal -= discount
+            tax = ("%.2f" % (.06 * float(subTotal)))
+            grandTotal = ("%.2f" % (1.06 * float(subTotal)))
+
+    else:
+        return redirect(url_for('customerLogin'))
+    return render_template('customer/orderss.html', invoice=invoice, tax=tax, subTotal=subTotal, grandTotal=grandTotal,
+                           customer=customer, orders=orders)
