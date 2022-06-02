@@ -14,8 +14,9 @@
             <hr>
             {% if product.discount > 0 %}
             <p>Discount: {{product.discount}} % </p>
+                <hr>
             {% endif %}
-            <hr>
+
             <b>Product discription</b>
             <p>{{product.desc}}</p>
             <form action="{{url_for('addcard')}}" method="post">
