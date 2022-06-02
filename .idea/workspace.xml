@@ -2,7 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b506d641-17b6-4095-bbc1-26d9631c6c26" name="Changes" comment="login on admin, btn in log , redirect home">
+      <change afterPath="$PROJECT_DIR$/shop/static/icons/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/static/icons/icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/templates/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/templates/products/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/online_market.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/online_market.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/customers/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/customers/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/myshop.db" beforeDir="false" afterPath="$PROJECT_DIR$/shop/myshop.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/products/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/products/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/static/images/56eeb17bb617bdc6fc48.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/static/images/93011518d8e247905198.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/static/images/995298d736ce00fc1b5a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/admin/brand.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/admin/brand.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/admin/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/customer/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/customer/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/customer/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/customer/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/customer/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/customer/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/products/addbrand.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/addbrand.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/products/addproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/addproduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/products/carts.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/carts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/products/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/products/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/products/single_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/single_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/products/updatebrand.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/updatebrand.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/templates/products/updateproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/templates/products/updateproduct.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +61,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/run.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/shop/__init__.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/shop/templates/products/index.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/flask_uploads.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/shop/products/routes.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/shop/customers/routes.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/shop/templates/layout.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/shop/templates/navbar.html" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -42,21 +80,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Python/online_market&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
-    ]
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/shop/static/js" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\macbook\IdeaProjects\online_market\shop\static\js" />
+      <recent name="C:\Users\macbook\IdeaProjects\online_market\shop\static\css" />
+      <recent name="C:\Users\macbook\IdeaProjects\online_market\shop\static\icons" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Python\online_market\shop\templates" />
       <recent name="C:\Python\online_market\shop\admin" />
@@ -182,10 +221,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="login on admin, btn in log , redirect home" />
     <option name="LAST_COMMIT_MESSAGE" value="login on admin, btn in log , redirect home" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/online_market$online_market.coverage" NAME="online_market Coverage Results" MODIFIED="1653338991775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/online_market$main.coverage" NAME="main Coverage Results" MODIFIED="1652987882645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/online_market$run.coverage" NAME="run Coverage Results" MODIFIED="1653913899364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

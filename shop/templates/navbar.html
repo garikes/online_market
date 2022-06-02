@@ -1,63 +1,109 @@
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<!--<div class="container">-->
+<!--    <nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--        <a class="navbar-brand" href="/">Home</a>-->
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"-->
+<!--                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav mr-auto">-->
+
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="/">All products</a>-->
+<!--                </li>-->
+<!--&lt;!&ndash;                <li class="nav-item dropdown">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"&ndash;&gt;-->
+<!--&lt;!&ndash;                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&ndash;&gt;-->
+<!--&lt;!&ndash;                        Brands&ndash;&gt;-->
+<!--&lt;!&ndash;                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">&ndash;&gt;-->
+<!--&lt;!&ndash;                        {% for brand in brands %}&ndash;&gt;-->
+<!--&lt;!&ndash;                        <a class="dropdown-item" href="{{url_for('get_brand',id =brand.id)}}">{{brand.name}}</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                        {% endfor %}&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                <li class="nav-item dropdown">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"&ndash;&gt;-->
+<!--&lt;!&ndash;                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&ndash;&gt;-->
+<!--&lt;!&ndash;                        Category&ndash;&gt;-->
+<!--&lt;!&ndash;                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">&ndash;&gt;-->
+<!--&lt;!&ndash;                        {% for category in categories %}&ndash;&gt;-->
+<!--&lt;!&ndash;                        <a class="dropdown-item"&ndash;&gt;-->
+<!--&lt;!&ndash;                           href="{{url_for('get_category',id =category.id)}}">{{category.name}}</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                        {% endfor %}&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </li>&ndash;&gt;-->
+<!--                {% if current_user.is_authenticated %}-->
+<!--                <li class="nav-item">-->
+<!--                    <a href="#" class="nav-link">{{current_user.first_name}} {{current_user.last_name}}</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a href="{{url_for('customer_logout')}}" class="nav-link"> Logout</a>-->
+<!--                </li>-->
+<!--                {% else %}-->
+<!--                <li class="nav-item">-->
+<!--                    <a href="{{url_for('customer_register')}}" class="nav-link">Sign in</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a href="{{url_for('customerLogin')}}" class="nav-link">login</a>-->
+<!--                </li>-->
+<!--                {% endif %}-->
+<!--                <li class="nav-item">-->
+<!--                    <a href="{{url_for('getCart')}}" class="nav-link"> Cart ({{ session['Shoppingcart']|length }}) </a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--&lt;!&ndash;            <form class="form-inline my-2 my-lg-0" action="{{url_for('result')}}">&ndash;&gt;-->
+<!--&lt;!&ndash;                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">&ndash;&gt;-->
+<!--&lt;!&ndash;                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>&ndash;&gt;-->
+<!--&lt;!&ndash;            </form>&ndash;&gt;-->
+<!--        </div>-->
+<!--    </nav>-->
+<!--</div>-->
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+    <a class="navbar-brand" href="/">
+        <img src = "/static/icons/icon.svg" width="40" height="32" style="margin-right: 20px; margin-left: 40px"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Products</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#about_us">About us</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
             <ul class="navbar-nav mr-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/">All products</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Brands
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {% for brand in brands %}
-                        <a class="dropdown-item" href="{{url_for('get_brand',id =brand.id)}}">{{brand.name}}</a>
-                        {% endfor %}
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Category
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {% for category in categories %}
-                        <a class="dropdown-item"
-                           href="{{url_for('get_category',id =category.id)}}">{{category.name}}</a>
-                        {% endfor %}
-                    </div>
-                </li>
                 {% if current_user.is_authenticated %}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">{{current_user.first_name}} {{current_user.last_name}}</a>
+                <li class="nav-item" style="margin-right: 20px">
+                    <a href="#profile" class="nav-link">{{current_user.first_name}} {{current_user.last_name}}</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item btn-info active" style="border-radius: 8px; margin-right: 20px">
                     <a href="{{url_for('customer_logout')}}" class="nav-link"> Logout</a>
                 </li>
                 {% else %}
-                <li class="nav-item">
+                <li class="nav-item btn-warning active" style="border-radius: 8px; margin-right: 20px">
                     <a href="{{url_for('customer_register')}}" class="nav-link">Sign in</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{url_for('customerLogin')}}" class="nav-link">login</a>
+                <li class="nav-item btn-info active" style="border-radius: 8px; margin-right: 20px">
+                    <a href="{{url_for('customerLogin')}}" class="nav-link">Login</a>
                 </li>
                 {% endif %}
-                <li class="nav-item">
+                <li class="nav-item" style="margin-right: 40px">
                     <a href="{{url_for('getCart')}}" class="nav-link"> Cart ({{ session['Shoppingcart']|length }}) </a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0" action="{{url_for('result')}}">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-</div>
+        </form>
+    </div>
+</nav>

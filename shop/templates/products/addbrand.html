@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="container">
+<div class="container" style="margin-top: 100px; margin-bottom: 30px">
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -13,7 +13,7 @@
                 <input type="submit" value="Add brand" class="btn btn-info mt-2">
             </form>
             <a href="/admin" class="btn btn-warning"
-               style="margin-top: -65px;margin-left: 140px">Cansel</a>
+               style="margin-top: -65px;margin-left: 140px">Cancel</a>
             {% else %}
             <h1 class="text-center bg-info p-2">Add a category</h1>
             <form action="" method="POST">
@@ -21,7 +21,7 @@
                 <input type="submit" value="Add category" class="btn btn-info mt-2">
             </form>
             <a href="/admin" class="btn btn-warning"
-               style="margin-top: -65px;margin-left: 140px">Cansel</a>
+               style="margin-top: -65px;margin-left: 140px">Cancel</a>
             {% endif %}
         </div>
         <div class="col-md-3"></div>

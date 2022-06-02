@@ -1,22 +1,22 @@
 {% extends 'layout.html' %}
 {%block content %}
 {% include 'navbar.html'%}
-<div class="container mt-5">
+<div class="container" style="margin-top: 100px; margin-bottom: 30px">
     <div class="row">
         <div class="col-md-6" id="b_image">
             <img src="{{url_for('static',filename='images/' + product.image_1)}}" alt="{{product.name}}" width="400"
                  height="400">
         </div>
         <div class="col-md-6">
-            <h4>Product name: {{product.name}} </h4>
+            <h4>{{product.name}} </h4>
             <hr>
-            <p>Product price: ${{product.price}}</p>
+            <p>Price: ${{product.price}}</p>
             <hr>
             {% if product.discount > 0 %}
             <p>Discount: {{product.discount}} % </p>
             {% endif %}
             <hr>
-            <b>Product discription</b>
+            <b>Description</b>
             <p>{{product.desc}}</p>
             <form action="{{url_for('addcard')}}" method="post">
                 <input type="hidden" name="product_id" value="{{product.id}}">
@@ -62,4 +62,5 @@
         b_image.innerHTML = "<img src=" + ImageSRC + " width='400' height='400'>";
     }
 </script>
+{% include 'footer.html' %}
 {% endblock content %}
