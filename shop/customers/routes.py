@@ -87,7 +87,7 @@ def customer_update():
             except:
                 customer.profile = photos.save(request.files.get('profile'), name=secrets.token_hex(10) + ".")
         db.session.commit()
-        return redirect(url_for('customer_update'))
+        return redirect(url_for('profile_info'))
     form.first_name.data = customer.first_name
     form.last_name.data = customer.last_name
     form.username.data = customer.username
@@ -225,6 +225,7 @@ def customer_order():
     return render_template('customer/customer_order.html', categories=categories(),
                            brands=brands(), orders=orders)
 
+
 @app.route('/orderss/<invoice>')
 @login_required
 def orderss(invoice):
@@ -245,4 +246,5 @@ def orderss(invoice):
     else:
         return redirect(url_for('customerLogin'))
     return render_template('customer/orderss.html', invoice=invoice, tax=tax, subTotal=subTotal, grandTotal=grandTotal,
-                           customer=customer, orders=orders)
+                           customer=customer, orders=orders, categories=categories(),
+                           brands=brands())

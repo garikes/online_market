@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="container mt-4">
+        {% include '_messages.html' %}
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-sm">
+                    <thead>
+                    <th>ID</th>
+                    <th>Invoice</th>
+                    <th>Status</th>
+                    <th>Date Create</th>
+                    <th>View Order</th>
+                    </thead>
+                    <tbody>
+                    {% for order in orders %}
+                        <th>{{ order.id }}</th>
+                        <th>{{ order.invoice }}</th>
+                        <th>{{ order.status }}</th>
+                        <th>{{ order.date_created }}</th>
+                        <th><a href="{{ url_for('orderss',invoice=order.invoice) }}" class="btn btn-info">View</a>
+                        </th>
+                        </tbody>
+                    {% endfor %}
+                </table>
+                <a href="{{ url_for('profile_info') }}" class=" btn btn-warning btn-sm">Cancel</a>
+            </div>
+
+        </div>
+    </div>
+{% endblock content %}
