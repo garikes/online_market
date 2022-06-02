@@ -18,7 +18,7 @@ class CustomerRegisterForm(FlaskForm):
     contact = StringField('Contact: ', [validators.DataRequired()])
     address = StringField('Address: ', [validators.DataRequired()])
 
-    profile = FileField('Profile', validators=[FileAllowed(['jpg', 'png', 'jpeg', 'gif'])])
+    profile = FileField('Procfile', validators=[FileAllowed(['jpg', 'png', 'jpeg', 'gif'])])
     submit = SubmitField('Register')
 
     def validate_username(self, username):
@@ -29,6 +29,30 @@ class CustomerRegisterForm(FlaskForm):
         if Register.query.filter_by(email=email.data).first():
             raise ValidationError("This email is already in use!")
 
+class CustomerUpdateForm(FlaskForm):
+    first_name = StringField('First name: ')
+    last_name = StringField('Last name: ')
+    username = StringField('Username: ' )
+    email = StringField('Email: ', [validators.Email(), validators.DataRequired()])
+    password = PasswordField('Password: ', [
+                                            validators.EqualTo('confirm', message=' Both password must match! ')])
+    confirm = PasswordField('Repeat Password: ')
+
+    country = StringField('Country: ')
+    city = StringField('City: ')
+    contact = StringField('Contact: ')
+    address = StringField('Address: ')
+
+    profile = FileField('Procfile', validators=[FileAllowed(['jpg', 'png', 'jpeg', 'gif'])])
+    submit = SubmitField('Save')
+
+    def validate_username(self, username):
+        if Register.query.filter_by(username=username.data).first():
+            raise ValidationError("This username is already in use!")
+
+    def validate_email(self, email):
+        if Register.query.filter_by(email=email.data).first():
+            raise ValidationError("This email is already in use!")
 
 class CustomerLoginForm(FlaskForm):
     email = StringField('Email: ', [validators.Email(), validators.DataRequired()])

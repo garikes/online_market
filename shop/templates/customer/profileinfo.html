@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% include 'navbar.html' %}
+    {% from "_formhelpers.html" import render_field %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h1 class="bg-info text-center">Profile</h1>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <table class="table table-sm">
+            <tr>
+                <td style="width:250px;height: 250px;text-align: center"><img
+                        src="{{ url_for('static',filename='images/'+ customer.profile) }}"
+                        alt="{{ customer.first_name }} {{ customer.lastname }}"
+                        width="250" height="250"></td>
+                <td style="width:250px;height: 250px " >
+                    <div >
+                        <table>
+                            <tr>
+                                <th>Name : {{ customer.first_name }} {{ customer.last_name }}</th>
+                            </tr>
+                            <tr>
+                                <th>Username : {{ customer.username }}</th>
+                            </tr>
+                            <tr>
+                                <th>Email : {{ customer.email }}</th>
+                            </tr>
+                            <tr>
+                                <th>Contact : {{ customer.contact }}</th>
+                            </tr>
+                            <tr>
+                                <th>Country : {{ customer.country }}</th>
+                            </tr>
+                            <tr>
+                                <th>City : {{ customer.city }}</th>
+                            </tr>
+                            <tr>
+                                <th>Address : {{ customer.address }}</th>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <a href="{{ url_for('customer_update') }}" class="btn btn-info btn-sm"  style="margin-left: 500px">Edit</a>
+        <a href="{{ url_for('customer_order') }}" class="btn btn-sm btn-info" style="margin-left: 10px"> View orders</a>
+    </div>
+{% endblock content %}

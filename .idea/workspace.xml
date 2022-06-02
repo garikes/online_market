@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="b506d641-17b6-4095-bbc1-26d9631c6c26" name="Changes" comment="Add Profile add fix bugs" />
+=======
+    <list default="true" id="b506d641-17b6-4095-bbc1-26d9631c6c26" name="Changes" comment="Add Profile add fix bugs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/customers/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/customers/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/myshop.db" beforeDir="false" afterPath="$PROJECT_DIR$/shop/myshop.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/static/images/56eeb17bb617bdc6fc48.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/static/images/93011518d8e247905198.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/static/images/995298d736ce00fc1b5a.jpg" beforeDir="false" />
+    </list>
+>>>>>>> ab1dea8d8ca38c64d1917100623db3fb3e142c52
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +41,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -120,7 +132,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="SCRIPT_NAME" value="C:\Python\online_market\run.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,7 +163,8 @@
       <workItem from="1653340584127" duration="472000" />
       <workItem from="1653507490108" duration="4983000" />
       <workItem from="1653598462842" duration="144000" />
-      <workItem from="1653835649259" duration="6409000" />
+      <workItem from="1653835649259" duration="11815000" />
+      <workItem from="1654108669010" duration="28328000" />
     </task>
     <task id="LOCAL-00001" summary="login on admin, btn in log , redirect home">
       <created>1653914777099</created>
@@ -160,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653914777099</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Profile add fix bugs">
+      <created>1654191260193</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654191260193</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,10 +196,26 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="heroku/master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="login on admin, btn in log , redirect home" />
-    <option name="LAST_COMMIT_MESSAGE" value="login on admin, btn in log , redirect home" />
+    <MESSAGE value="Add Profile add fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Profile add fix bugs" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/online_market$online_market.coverage" NAME="online_market Coverage Results" MODIFIED="1653338991775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
