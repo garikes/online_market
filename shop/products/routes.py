@@ -235,3 +235,13 @@ def deleteproduct(id):
         return redirect(url_for('admin'))
     flash(f'Can not delete the product', 'success')
     return redirect(url_for('admin'))
+
+
+@app.route('/about_as', methods=['POST', 'GET'])
+def about_us():
+    return render_template('products/about_as.html')
+
+
+@app.route('/contact', methods=['POST', 'GET'])
+def contact():
+    return render_template('products/contact.html')
