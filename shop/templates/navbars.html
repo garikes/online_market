@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+    <a class="navbar-brand" href="/">
+        <img src = "/static/icons/icon.svg" width="40" height="32" style="margin-right: 20px; margin-left: 40px"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Products</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#about_us">About us</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <ul class="navbar-nav mr-auto">
+                {% if current_user.is_authenticated %}
+                <li class="nav-item" style="margin-right: 20px">
+                    <a href="{{ url_for('profile_info') }}" class="nav-link">{{current_user.first_name}} {{current_user.last_name}}</a>
+                </li>
+                <li class="nav-item btn-info active" style="border-radius: 8px; margin-right: 20px">
+                    <a href="{{url_for('customer_logout')}}" class="nav-link"> Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item btn-warning active" style="border-radius: 8px; margin-right: 20px">
+                    <a href="{{url_for('customer_register')}}" class="nav-link">Sign in</a>
+                </li>
+                <li class="nav-item btn-info active" style="border-radius: 8px; margin-right: 20px">
+                    <a href="{{url_for('customerLogin')}}" class="nav-link">Login</a>
+                </li>
+                {% endif %}
+                <li class="nav-item" style="margin-right: 40px">
+                    <a href="{{url_for('getCart')}}" class="nav-link"> Cart ({{ session['Shoppingcart']|length }}) </a>
+                </li>
+            </ul>
+        </form>
+    </div>
+</nav>
