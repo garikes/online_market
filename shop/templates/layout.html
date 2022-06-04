@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+        {% block custom_css %}{% endblock custom_css %}
+
     <title>{{title}}</title>
 </head>
 <body>
@@ -15,5 +17,7 @@
 <script src="{{url_for('static', filename='js/jquery-3.4.1.slim.min.js')}}"></script>
 <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
 <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+{% block custom_js %}
+{% endblock custom_js %}
 </body>
 </html>

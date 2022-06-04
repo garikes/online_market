@@ -1,4 +1,7 @@
 {% extends 'layout.html' %}
+        {% block custom_css %}
+            <link type="text/css" href="{{url_for('static', filename='css/contact.css')}}" rel="stylesheet">
+        {% endblock custom_css %}
 {% block content %}
     <div>
     {% include 'navbars.html' %}
@@ -7,3 +10,5 @@
     <p class="container text-center" style="margin-top: 154px">Page Contact</p>
     </div>
 {% endblock content %}
+{% block custom_js %}
+{% endblock custom_js %}
