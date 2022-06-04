@@ -4,18 +4,19 @@ body {
 
 .contact {
     width: 1240px;
-    margin: 66px auto 0 auto;
+    margin: 20px auto 0 auto;
     display: flex;
     flex-direction: row;
+    transform: scale(0.8);
 }
 
 .contact__header {
-    margin-top: 185px;
+    margin-top: 30px;
     width: 545px;
 }
 
 .contact__form {
-    margin-top: 113px;
+    /*margin-top: 30px;*/
     width: 660px;
     background: #FFFFFF;
     box-shadow: 0px 54px 54px rgba(74, 58, 255, 0.02), 1px 4px 104px rgba(20, 20, 43, 0.04), 0px 98px 66px rgba(19, 18, 66, 0.02);
@@ -24,12 +25,38 @@ body {
 }
 
 .contact__pre-header {
+    position: relative;
+    margin-left: 40px;
     font-weight: 700;
     font-size: 18px;
     line-height: 20px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #080707;
+    width: 228px;
+}
+
+.contact__pre-header:after {
+    display: block;
+    content: none;
+    position: absolute;
+    width: 22px;
+    height: 20px;
+    /*border-radius: 30px;*/
+    top: 0;
+    left: 50%;
+}
+
+.contact__pre-header:before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #e69f37;
+    border-radius: 30px;
+    left: -30px;
+    top: 50%;
+    position: absolute;
 }
 
 .contact__title {
@@ -82,7 +109,7 @@ body {
 
 .form__field p {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 20px;
     text-align: left;
 }
@@ -105,4 +132,53 @@ body {
 
 .form__field:nth-child(3), .form__field:nth-child(4) {
     margin-top: 44px;
+}
+
+.form__service {
+    margin-top: 38px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.form__feedback {
+    margin-top: 35px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.form__feedback-section {
+    margin-top: 18px;
+    width: 565px;
+    min-height: 160px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #EFF0F7;
+    box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
+    border-radius: 20px;
+    resize: none;
+    padding: 28px 44px 28px 20px;
+}
+
+.form__submit {
+    display: block;
+    margin-top: 28px;
+    padding: 28px 50px;
+    width: 250px;
+    height: 76px;
+    background: rgb(230, 159, 55, 0.6);
+    border-radius: 86px;
+    border: #e69f99;
+}
+
+.form__submit:hover, .form__submit:active, .form__submit:focus {
+    border: none;
+    outline: none;
+}
+
+.form__submit:hover {
+    font-size: 17px;
+    box-shadow: 0px 8px 22px rgba(230, 159, 55, 0.6);
+    color: #080707;
 }
