@@ -51,8 +51,8 @@ def get_brand(id):
 def get_category(id):
     page = request.args.get('page', 1, type=int)
     get_cat = Category.query.filter_by(id=id).first_or_404()
-    get_cat_prod = Addproduct.query.filter_by(category=get_cat).paginate(page=page, per_page=2)
-    return render_template('products/index.html', get_cat_prod=get_cat_prod, categories=categories(), brands=brands(),
+    get_cat_prod = Addproduct.query.filter_by(category=get_cat).paginate(page=page, per_page=8)
+    return render_template('products/index.html', get_cat_prod=get_cat_prod, brands=brands(), categories=categories(),
                            get_cat=get_cat)
 
 

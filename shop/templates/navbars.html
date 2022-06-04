@@ -1,45 +1,105 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar__header navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 
     <a class="navbar-brand" href="/">
-        <img src = "/static/icons/icon.svg" width="40" height="32" style="margin-right: 20px; margin-left: 40px"/>
+        <img src="/static/icons/shopping-cart.png" width="40" height="40"
+             style="margin-right: 20px; margin-left: 40px"/>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Products</a>
+    <div class="navbar__header-menu navbar__menu collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar__menu-list navbar-nav mr-auto">
+            <li class="navbar__menu-item nav-item active">
+                <a class="navbar__menu-item  nav-link" href="/">Products</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('about_us') }}">About us</a>
+            <li class="navbar__menu-item nav-item active">
+                <a class="navbar__menu-item nav-link" href="{{ url_for('about_us') }}">About us</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+            <li class="navbar__menu-item nav-item active">
+                <a class="navbar__menu-item nav-link" href="{{ url_for('contact') }}">Contact</a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
-            <ul class="navbar-nav mr-auto">
+            <div class="navbar__header-form navbar-nav">
                 {% if current_user.is_authenticated %}
-                <li class="nav-item" style="margin-right: 20px">
-                    <a href="{{ url_for('profile_info') }}" class="nav-link">{{current_user.first_name}} {{current_user.last_name}}</a>
-                </li>
-                <li class="nav-item btn-info active" style="border-radius: 8px; margin-right: 20px">
-                    <a href="{{url_for('customer_logout')}}" class="nav-link"> Logout</a>
-                </li>
+                    <div class="nav-item" style="margin-right: 20px">
+                        <a href="{{ url_for('profile_info') }}"
+                           class="nav-link">{{ current_user.first_name }} {{ current_user.last_name }}</a>
+                    </div>
+                    <div class="nav-item btn-info active" style="border-radius: 8px; margin-right: 20px">
+                        <a href="{{ url_for('customer_logout') }}" class="nav-link"> Logout</a>
+                    </div>
                 {% else %}
-                <li class="nav-item btn-warning active" style="border-radius: 8px; margin-right: 20px">
-                    <a href="{{url_for('customer_register')}}" class="nav-link">Sign in</a>
-                </li>
-                <li class="nav-item btn-info active" style="border-radius: 8px; margin-right: 20px">
-                    <a href="{{url_for('customerLogin')}}" class="nav-link">Login</a>
-                </li>
+                    <div class="navbar__header-sign-in nav-item btn-warning active"
+                         style="border-radius: 8px; margin-right: 20px">
+                        <a href="{{ url_for('customer_register') }}" class="nav-link">Sign in</a>
+                    </div>
+                    <div class="nav-item btn-info active" style="border-radius: 8px; margin-right: 20px">
+                        <a href="{{ url_for('customerLogin') }}" class="nav-link">Login</a>
+                    </div>
                 {% endif %}
-                <li class="nav-item" style="margin-right: 40px">
-                    <a href="{{url_for('getCart')}}" class="nav-link"> Cart ({{ session['Shoppingcart']|length }}) </a>
-                </li>
-            </ul>
+                <div class="nav-item" style="margin-right: 40px">
+                    <a href="{{ url_for('getCart') }}" class="nav-link"> Cart
+                        ({{ session['Shoppingcart']|length }}) </a>
+                </div>
+            </div>
         </form>
     </div>
 </nav>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar__header {
+        {#background-color: #080707;#}
+    }
+
+    .navbar__menu-item:hover {
+        color: #e69f37 !important;
+        position: relative;
+    }
+
+    .navbar__menu-item:hover::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #e69f37;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        animation-duration: 0.5s;
+        animation-name: slidein;
+    }
+
+    @keyframes slidein {
+        from {
+            width: 0%;
+        }
+
+        to {
+            width: 100%;
+        }
+    }
+
+    .navbar__form form {
+        display: block;
+    }
+
+    .navbar__header-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar__header-menu form {
+        display: flex;
+        align-items: center;
+    }
+
+
+</style>

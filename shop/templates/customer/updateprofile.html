@@ -2,7 +2,7 @@
 {% block content %}
     {% include 'navbars.html' %}
     {% from "_formhelpers.html" import render_field %}
-    <div class="container">
+    <div class="container" style="margin-top: 100px">
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
@@ -40,4 +40,14 @@
         </form>
 
     </div>
+    <footer class="footer fixed-bottom navbar-dark bg-dark" style="clear: both;
+            margin-top: 320px;
+            position: center;
+            height: 50px;
+            ">
+        <div style="text-align: center">
+            <hr class="dropdown-divider" style="visibility: hidden;">
+            <span class="text-muted">&copy; 2022 Online Shop, Inc</span>
+        </div>
+    </footer>
 {% endblock content %}

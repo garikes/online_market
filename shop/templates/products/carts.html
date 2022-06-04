@@ -1,3 +1,4 @@
+<link rel="icon" href="../../static/icons/icon.png">
 {% extends "layout.html" %}
 {% include 'navbars.html' %}
 {% block content %}
@@ -47,7 +48,7 @@
                                 <th><input type="number" name="quantity" min="1" max="10"
                                            value="{{ product.quantity }}"></th>
                                 {% if product.discount >0 %}
-                                    <td>{{ product.discount }}% &nbsp;is ${{ discount }}</td>
+                                    <td>{{ product.discount }}% &nbsp;(${{ discount }})</td>
                                 {% else %}
                                     <td></td>
                                 {% endif %}
@@ -76,14 +77,15 @@
                 </table>
             </div>
         </div>
-        <footer class="footer" style="clear: both;
+    </div>
+    <footer class="footer fixed-bottom navbar-dark bg-dark" style="clear: both;
             margin-top: 320px;
             position: center;
-            height: 50px;">
-            <div style="text-align: center">
-                <hr class="dropdown-divider">
-                <span class="text-muted">&copy; 2022 Online Shop, Inc</span>
-            </div>
-        </footer>
-    </div>
+            height: 50px;
+            ">
+        <div style="text-align: center">
+            <hr class="dropdown-divider" style="visibility: hidden;">
+            <span class="text-muted">&copy; 2022 Online Shop, Inc</span>
+        </div>
+    </footer>
 {% endblock content %}

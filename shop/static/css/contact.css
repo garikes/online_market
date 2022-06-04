@@ -1,3 +1,108 @@
-body{
-color: red;
+body {
+    background: #F7F7FB;
+}
+
+.contact {
+    width: 1240px;
+    margin: 66px auto 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.contact__header {
+    margin-top: 185px;
+    width: 545px;
+}
+
+.contact__form {
+    margin-top: 113px;
+    width: 660px;
+    background: #FFFFFF;
+    box-shadow: 0px 54px 54px rgba(74, 58, 255, 0.02), 1px 4px 104px rgba(20, 20, 43, 0.04), 0px 98px 66px rgba(19, 18, 66, 0.02);
+    border-radius: 34px;
+    padding: 70px 48px 75px;
+}
+
+.contact__pre-header {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #080707;
+}
+
+.contact__title {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 62px;
+}
+
+.contact__descr {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    width: 500px;
+    margin-top: 18px;
+}
+
+.contact__form form {
+    display: block;
+    margin: 0 auto;
+    /*padding-right: 48px;*/
+    /*padding-left: 48px;*/
+}
+
+.contact__fields {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form__field {
+}
+
+.form__field input {
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #e69f37;
+    box-shadow: 0px 2px 11px rgba(69, 65, 164, 0.06), 0px 4px 10px rgba(31, 37, 89, 0.07);
+    border-radius: 46px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 22px 60px 22px 20px;
+    width: 250px;
+}
+
+.form__field input:hover, .form__field input:focus, .form__field input:active, .form__field input:link, .form__field input:visited {
+    border-color: #dbc9aa !important;
+    outline: none;
+}
+
+.form__field p {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.form__field p {
+    margin-top: 10px;
+}
+
+.form__field div {
+    position: relative;
+}
+
+.form__field div img {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+.form__field:nth-child(3), .form__field:nth-child(4) {
+    margin-top: 44px;
 }

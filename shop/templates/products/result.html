@@ -1,3 +1,4 @@
+<link rel="icon" href="../../static/icons/icon.png">
 {% extends 'layout.html' %}
 {%block content %}
 {% include 'navbars.html' %}
@@ -57,7 +58,7 @@
                 <div class="card-body">
                     {% if product.discount > 0 %}
                     <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;">
-                        Discount {{product.discount}}</h5>
+                        Discount {{product.discount}}%</h5>
                     {% endif %}
                     <h5 class="text-center">{{product.name}}</h5>
                     <p class="text-center">Price ${{product.price}}</p>
@@ -83,5 +84,14 @@
     </div>
 </div>
 </div>
-{% include 'footer.html' %}
+    <footer class="footer fixed-bottom navbar-dark bg-dark" style="clear: both;
+            margin-top: 320px;
+            position: center;
+            height: 50px;
+            ">
+        <div style="text-align: center">
+            <hr class="dropdown-divider" style="visibility: hidden;">
+            <span class="text-muted">&copy; 2022 Online Shop, Inc</span>
+        </div>
+    </footer>
 {%endblock content %}

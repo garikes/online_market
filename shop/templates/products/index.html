@@ -1,5 +1,6 @@
+<link rel="icon" href="../../static/icons/icon.png">
 {% extends 'layout.html' %}
-    {% include 'navbars.html' %}
+{% include 'navbars.html' %}
 {% block content %}
     <div class="container">
         <div class="row">
@@ -17,7 +18,7 @@
                             <div class="card-body">
                                 {% if b.discount > 0 %}
                                     <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;">
-                                        Discount {{ b.discount }}</h5>
+                                        Discount {{ b.discount }}%</h5>
                                 {% endif %}
                                 <h5 class="text-center">{{ b.name }}</h5>
                                 <p class="text-center">Price ${{ b.price }}</p>
@@ -29,7 +30,7 @@
                                     <input type="hidden" name="product_id" value="{{ b.id }}">
                                     <button type="submit" class="btn btn-sm btn-warning float-right">Add to Cart
                                     </button>
-                                    <input type="hidden" name="quantity" value="1" min="1" max="20">
+                                    <input type="" style="visibility: hidden; height: 1px; width: 60px" name="quantity" value="1" min="1" max="20">
                                     {% set colors = b.colors.split(',') %}
                                     <select name="colors" id="colors" style="visibility: hidden;">
                                         {% for color in colors %}
@@ -81,7 +82,7 @@
                                 <div class="card-body">
                                     {% if get_cat.discount > 0 %}
                                         <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;">
-                                            Discount {{ get_cat.discount }}</h5>
+                                            Discount {{ get_cat.discount }}%</h5>
                                     {% endif %}
                                     <h5 class="text-center">{{ get_cat.name }}</h5>
                                     <p class="text-center">Price ${{ get_cat.price }}</p>
@@ -93,7 +94,7 @@
                                         <input type="hidden" name="product_id" value="{{ get_cat.id }}">
                                         <button type="submit" class="btn btn-sm btn-warning float-right">Add to Cart
                                         </button>
-                                        <input type="hidden" name="quantity" value="1" min="1" max="20">
+                                        <input type="" style="visibility: hidden; height: 1px; width: 60px" name="quantity" value="1" min="1" max="20">
                                         {% set colors = get_cat.colors.split(',') %}
                                         <select name="colors" id="colors" style="visibility: hidden;">
                                             {% for color in colors %}
@@ -147,7 +148,7 @@
                                 <div class="card-body">
                                     {% if product.discount > 0 %}
                                         <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;">
-                                            Discount {{ product.discount }}</h5>
+                                            Discount {{ product.discount }}%</h5>
                                     {% endif %}
                                     <h5 class="text-center">{{ product.name }}</h5>
                                     <p class="text-center">Price ${{ product.price }}</p>
@@ -159,7 +160,7 @@
                                         <input type="hidden" name="product_id" value="{{ product.id }}">
                                         <button type="submit" class="btn btn-sm btn-warning float-right">Add to Cart
                                         </button>
-                                        <input type="hidden" name="quantity" value="1" min="1" max="20">
+                                        <input type="" style="visibility: hidden; height: 1px; width: 60px" name="quantity" value="1" min="1" max="20">
                                         {% set colors = product.colors.split(',') %}
                                         <select name="colors" id="colors" style="visibility: hidden;">
                                             {% for color in colors %}
@@ -199,9 +200,19 @@
                         {% endif %}
                     </div>
                 </div>
-
             {% endif %}
     </div>
-        {% include 'footer.html' %}
+
+    </div>
+    <footer class="footer navbar-dark bg-dark" style="clear: both;
+            margin-top: 81px;
+            position: sticky;
+            height: 50px;
+            ">
+        <div style="text-align: center">
+            <hr class="dropdown-divider" style="visibility: hidden;">
+            <span class="text-muted">&copy; 2022 Online Shop, Inc</span>
+        </div>
+    </footer>
 
 {% endblock content %}

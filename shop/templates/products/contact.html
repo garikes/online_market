@@ -1,14 +1,75 @@
+<link rel="icon" href="../../static/icons/icon.png">
 {% extends 'layout.html' %}
-        {% block custom_css %}
-            <link type="text/css" href="{{url_for('static', filename='css/contact.css')}}" rel="stylesheet">
-        {% endblock custom_css %}
+{% block custom_css %}
+    <link type="text/css" href="{{ url_for('static', filename='css/contact.css') }}" rel="stylesheet">
+{% endblock custom_css %}
 {% block content %}
     <div>
-    {% include 'navbars.html' %}
+        {% include 'navbars.html' %}
     </div>
-    <div>
-    <p class="container text-center" style="margin-top: 154px">Page Contact</p>
-    </div>
+    <section class="contact">
+        <header class="contact__header">
+            <p class="contact__pre-header">Submit your message</p>
+            <h1 class="contact__title">Fill the form to get advice</h1>
+
+            <p class="contact__descr">Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis eu
+                sit
+                massa volutpat massa rhoncus odio feugiat tellus, elit massa sed.</p>
+        </header>
+
+        <div class="contact__form">
+            <form action="#">
+                <div class="contact__fields">
+                    <div class="form__field">
+                        <label>
+                            <p>Name</p>
+                            <div>
+                                <input type="text" name="name" placeholder="Name">
+                                <img src="../../static/icons/contact/name.svg" alt="name">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form__field">
+                        <label>
+                            <p>Email</p>
+                            <div>
+                                <input type="text" name="email" placeholder="Email">
+                                <img src="../../static/icons/contact/email.svg" alt="email">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form__field">
+                        <label>
+                            <p>Phone number</p>
+                            <div>
+                                <input type="text" name="phone" placeholder="Phone number">
+                                <img src="../../static/icons/contact/phone.svg" alt="phone">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form__field">
+                        <label>
+                            <p>Company</p>
+                            <div>
+                                <input type="text" name="company" placeholder="Company">
+                                <img src="../../static/icons/contact/company.svg" alt="company">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer class="footer fixed-bottom navbar-dark bg-dark" style="clear: both;
+            margin-top: 320px;
+            position: center;
+            height: 50px;
+            ">
+        <div style="text-align: center">
+            <hr class="dropdown-divider" style="visibility: hidden;">
+            <span class="text-muted">&copy; 2022 Online Shop, Inc</span>
+        </div>
+    </footer>
 {% endblock content %}
 {% block custom_js %}
 {% endblock custom_js %}
