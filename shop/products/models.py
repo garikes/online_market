@@ -45,4 +45,20 @@ class Category(db.Model):
         return '<Category %r>' % self.name
 
 
+class Feedback(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    status = db.Column(db.String(20), default='Not Sent', nullable=False)
+    rating = db.Column(db.String(10), unique=False)
+    Name = db.Column(db.String(30), unique=False)
+    email = db.Column(db.String(50), unique=True)
+    contact = db.Column(db.String(200), unique=False)
+    company_name = db.Column(db.String(50), unique=False)
+    feedback = db.Column(db.String(500), unique=False)
+    date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+
+    def __repr__(self):
+        return '<Feedback %r>' % self.Name
+
+
 db.create_all()

@@ -6,6 +6,7 @@ import os
 from flask_msearch import Search
 from flask_login import LoginManager
 from flask_migrate import Migrate
+from flask_mail import Mail, Message
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
@@ -28,12 +29,20 @@ with app.app_context():
     else:
         migrate.init_app(app, db)
 
-
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'customerLogin'
 login_manager.needs_refresh_message_category = 'danger'
 login_manager.login_message = u'Please login first'
+
+
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = "dvmp.ua@gmail.com"
+app.config['MAIL_PASSWORD'] = "none"
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
 
 from shop.admin import routes
 from shop.products import routes

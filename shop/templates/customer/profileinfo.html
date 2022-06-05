@@ -1,7 +1,12 @@
+<link rel="icon" href="../../static/icons/icon.png">
 {% extends 'layout.html' %}
+{% block custom_css %}
+    <title>
+        Profile
+    </title>
+{% endblock custom_css %}    {% include 'navbars.html' %}
 {% block content %}
-    {% include 'navbars.html' %}
-    {% from "_formhelpers.html" import render_field %}
+
     <div class="container" style="margin-top: 100px">
         <div class="row">
             <div class="col-md-2"></div>

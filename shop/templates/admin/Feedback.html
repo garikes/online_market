@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="/admin">
+            <img src="/static/icons/icon.svg" width="40" height="32" style="margin-right: 20px; margin-left: 40px"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('admin') }}">Products <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('brands') }}">Brands</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('category') }}">Categories</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('feedback') }}">Feedback</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Add
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url_for('addproduct') }}">Add product</a>
+                        <a class="dropdown-item" href="{{ url_for('addbrand') }}">Add brand</a>
+                        <a class="dropdown-item" href="{{ url_for('addcat') }}">Add category</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <form class="form-inline mt-2 mt-md-0">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item btn-info active" style="border-radius: 8px; margin-right: 40px">
+                    <a href="{{ url_for('customer_logout') }}" class="nav-link">Logout</a>
+                </li>
+            </ul>
+        </form>
+    </nav>
+    {% include '_messages.html' %}
+    <div class="container mt-5">
+        <table class="table table-sm table-condensed table-striped table-hover">
+            <thead>
+            <th>Sr</th>
+            <th>Status</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Company Name</th>
+            <th> Rating </th>
+            <th>Feedback</th>
+            <th>Date create</th>
+            <th>Sent</th>
+            </thead>
+            <tbody>
+            {% if feedbacks %}
+                {% for feedback in feedbacks %}
+                    <tr>
+                        <th>{{ loop.index }}</th>
+                        <th>{{ feedback.status }}</th>
+                        <th>{{ feedback.Name }}</th>
+                        <th>{{ feedback.email }}</th>
+                        <th>{{ feedback.contact }}</th>
+                        <th>{{ feedback.company_name }}</th>
+                        <th>{{ feedback.rating }}/5</th>
+                        <th>{{ feedback.feedback }}</th>
+                        <th>{{ feedback.date_created }}</th>
+                        <th>
+                            {% if feedback.status == 'Sent' %}
+                            <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                                    data-target="#exampleModal-{{ feedback.id }}">
+                                Sent
+                            </button>
+                            {% else %}
+                            <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                    data-target="#exampleModal-{{ feedback.id }}">
+                                Sent
+                            </button>
+                            {% endif %}
+                        </th>
+                    </tr>
+                    <div class="modal fade" id="exampleModal-{{ feedback.id }}" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">{{ feedbacks.Name }}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times</span>
+                                    </button>
+                                    <div class="modal-body">
+                                        <p class="text-danger">Sent mail in Email ({{ feedback.email }})</p>
+                                    </div>
+                                </div>
+                                <form action="{{ url_for('sent_msg' ,id=feedback.id) }}" method="post">
+                                    <textarea name="message" rows="4" cols="50" placeholder="Enter message"></textarea>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-danger">Sent</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel
+                                        </button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <footer class="footer fixed-bottom navbar-dark bg-dark" style="clear: both;
+            margin-top: 320px;
+            position: center;
+            height: 50px;
+            ">
+        <div style="text-align: center">
+            <hr class="dropdown-divider" style="visibility: hidden;">
+            <span class="text-muted">&copy; 2022 Online Shop, Inc</span>
+        </div>
+    </footer>
+{% endblock content %}

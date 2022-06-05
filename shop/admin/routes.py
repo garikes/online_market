@@ -1,9 +1,9 @@
 from flask import render_template, session, request, redirect, url_for, flash
 
-from shop import app, db, bcrypt
+from shop import app, db, bcrypt, Mail, Message, mail
 from .forms import RegistrationForm, LoginForm
 from .models import User
-from shop.products.models import Addproduct, Brand, Category
+from shop.products.models import Addproduct, Brand, Category, Feedback
 import os
 
 
@@ -60,3 +60,30 @@ def login():
         else:
             flash('Wrong Password please try againe', 'danger')
     return render_template('admin/login.html', form=form, title="Login Page")
+
+
+@app.route('/feedback', methods=['POST', 'GET'])
+def feedback():
+    if 'email' not in session:
+        flash(f'Please login first', 'danger')
+        return redirect(url_for('login'))
+    feedbacks = Feedback.query.order_by(Feedback.id.desc()).all()
+
+    return render_template('admin/Feedback.html', title="Feedback page", feedbacks=feedbacks)
+
+
+@app.route('/sent_msg/<int:id>', methods=['POST', 'GET'])
+def sent_msg(id):
+    feedback = Feedback.query.get_or_404(id)
+    if request.method == "POST":
+        sent_text = request.form.get('message')
+        msg = Message("HEY", sender="noreply@demo.com", recipients=[feedback.email])
+        msg.body = f"{sent_text}"
+        # mail.send(msg)
+        flash("Reset request sent", "success")
+        feedback.status = 'Sent'
+        db.session.commit()
+        return redirect(url_for("feedback"))
+    else:
+        flash("Email not found", "error")
+        return redirect(url_for("feedback"))

@@ -16,3 +16,11 @@ class Addproducts(Form):
                         validators=[FileAllowed(['jpg', 'png', 'gif', 'jpeg'])])
     image_3 = FileField('Image 3',
                         validators=[FileAllowed(['jpg', 'png', 'gif', 'jpeg'])])
+
+
+class FeedbackForm(Form):
+    Name = StringField('Name', [validators.DataRequired()])
+    Email = StringField('Email', [validators.Email(), validators.DataRequired()])
+    contact = StringField('Phone number', [validators.DataRequired()])
+    company_name = StringField('Company', [validators.DataRequired()])
+    feedback = TextAreaField('Additional feedback', [validators.DataRequired()])

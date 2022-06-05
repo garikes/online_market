@@ -1,52 +1,47 @@
-<nav class="navbar__header navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<header class="header fixed-top">
+    <div class="header__nav">
+        <a class="header__brand" href="/">
+            <img src="../static/icons/shopping-cart.png" alt="">
+        </a>
 
-    <a class="navbar-brand" href="/">
-        <img src="/static/icons/shopping-cart.png" width="40" height="40"
-             style="margin-right: 20px; margin-left: 40px"/>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar__header-menu navbar__menu collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar__menu-list navbar-nav mr-auto">
-            <li class="navbar__menu-item nav-item active">
-                <a class="navbar__menu-item  nav-link" href="/">Products</a>
+        <ul class="navbar__menu-list">
+            <li class="navbar__menu-item">
+                <a href="/">Products</a>
             </li>
-            <li class="navbar__menu-item nav-item active">
-                <a class="navbar__menu-item nav-link" href="{{ url_for('about_us') }}">About us</a>
+            <li class="navbar__menu-item">
+                <a href="{{ url_for('about_us') }}">About us</a>
             </li>
-            <li class="navbar__menu-item nav-item active">
-                <a class="navbar__menu-item nav-link" href="{{ url_for('contact') }}">Contact</a>
+            <li class="navbar__menu-item">
+                <a href="{{ url_for('contact') }}">Feedback</a>
             </li>
         </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <div class="navbar__header-form navbar-nav">
-                {% if current_user.is_authenticated %}
-                    <div class="nav-item" style="margin-right: 20px">
-                        <a href="{{ url_for('profile_info') }}"
-                           class="nav-link">{{ current_user.first_name }} {{ current_user.last_name }}</a>
-                    </div>
-                    <div class="nav-item btn-info active" style="border-radius: 8px; margin-right: 20px">
-                        <a href="{{ url_for('customer_logout') }}" class="nav-link"> Logout</a>
-                    </div>
-                {% else %}
-                    <div class="navbar__header-sign-in nav-item btn-warning active"
-                         style="border-radius: 8px; margin-right: 20px">
-                        <a href="{{ url_for('customer_register') }}" class="nav-link">Sign in</a>
-                    </div>
-                    <div class="nav-item btn-info active" style="border-radius: 8px; margin-right: 20px">
-                        <a href="{{ url_for('customerLogin') }}" class="nav-link">Login</a>
-                    </div>
-                {% endif %}
-                <div class="nav-item" style="margin-right: 40px">
-                    <a href="{{ url_for('getCart') }}" class="nav-link"> Cart
-                        ({{ session['Shoppingcart']|length }}) </a>
-                </div>
+    </div>
+
+    <div>
+        <form class="header__form" action="#">
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('profile_info') }}"
+                   class="nav-link-username">{{ current_user.first_name }} {{ current_user.last_name }}</a>
+                <button class="nav__item btn-login">
+                    <a href="{{ url_for('customer_logout') }}" class="nav-link">Logout</a>
+                </button>
+            {% else %}
+                <button class="nav__item btn-sign-up">
+                    <a href="{{ url_for('customer_register') }}" class="nav-link">Sign in</a>
+                </button>
+                <button class="nav__item btn-login">
+                    <a href="{{ url_for('customerLogin') }}" class="nav-link">Login</a>
+                </button>
+
+            {% endif %}
+            <div>
+                <a href="{{ url_for('getCart') }}" class="nav__cart"> Cart
+                    ({{ session['Shoppingcart']|length }}) </a>
             </div>
         </form>
     </div>
-</nav>
+
+</header>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
@@ -55,23 +50,58 @@
         font-family: 'Poppins', sans-serif;
     }
 
-    .navbar__header {
-        {#background-color: #080707;#}
+    .header {
+        height: 60px;
+        width: 100vw;
+        background-color: #343a40;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    .navbar__menu-item:hover {
-        color: #e69f37 !important;
+    .header__brand img {
+        width: 40px;
+        height: 40px;
+        margin-left: 40px;
+        margin-right: 20px;
+    }
+
+    .header__nav {
+        width: 500px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .navbar__menu-list {
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+        margin-top: 10px;
+        flex-direction: row;
+        list-style: none;
+    }
+
+    .navbar__menu-item a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .navbar__menu-item a:hover {
+        color: #e69f37;
         position: relative;
+        text-decoration: none;
     }
 
-    .navbar__menu-item:hover::after {
+    .navbar__menu-item a:hover::after {
         display: block;
         content: '';
         width: 100%;
         height: 1px;
         background: #e69f37;
         position: absolute;
-        bottom: 0;
+        bottom: -5px;
         left: 0;
         animation-duration: 0.5s;
         animation-name: slidein;
@@ -87,19 +117,85 @@
         }
     }
 
-    .navbar__form form {
+    .header__form {
+        display: flex;
+    {#justify-content: space-between;#} align-items: center;
+        width: 350px;
+        margin-top: 15px;
+        margin-right: 120px;
+    }
+
+    .navbar__header-form button a {
         display: block;
+        color: #fff;
     }
 
-    .navbar__header-menu {
-        display: flex;
-        align-items: center;
+    .btn-sign-up {
+        box-sizing: border-box;
+        width: 100px;
+        height: 40px;
+        border: 1px solid #9F9F9F;
+        background-color: #f7f7fb;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        margin-right: 25px;
+        text-align: center;
+        color: #e69f37;
     }
 
-    .navbar__header-menu form {
-        display: flex;
-        align-items: center;
+    .btn-login {
+        width: 100px;
+        height: 40px;
+        background: #17a2b8;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #FFFFFF;
+        border: none;
     }
 
+    .header__form button:hover, .header__form button:active, .header__form button:focus {
+        border: none;
+        outline: none;
+    }
+
+    .nav-link {
+        color: #080707;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .nav-link:hover {
+        font-weight: 500;
+        outline: none;
+        text-decoration: none;
+        color: #080707;
+        border: none;
+    }
+
+    .nav__cart {
+        color: #fff;
+        margin-left: 20px;
+    }
+
+    .nav__cart:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .nav-link-username {
+        margin-right: 25px;
+        color: #fff;
+    }
+
+    .nav-link-username:hover {
+    {#margin-top: 7px;#} color: #fff;
+        text-decoration: none;
+    }
 
 </style>

@@ -2,9 +2,9 @@ import secrets
 
 from flask import redirect, render_template, url_for, flash, request, session, current_app
 from shop import db, app, photos, search
-from .models import Brand, Category, Addproduct
+from .models import Brand, Category, Addproduct, Feedback
 import os
-from .forms import Addproducts
+from .forms import Addproducts, FeedbackForm
 
 
 def brands():
@@ -244,4 +244,13 @@ def about_us():
 
 @app.route('/contact', methods=['POST', 'GET'])
 def contact():
-    return render_template('products/contact.html')
+    forms = FeedbackForm(request.form)
+    rating = request.form.get('rate')
+    if request.method == "POST":
+        feedback = Feedback(Name=forms.Name.data, rating=rating, email=forms.Email.data, contact=forms.contact.data,
+                            company_name=forms.company_name.data, feedback=forms.feedback.data)
+        db.session.add(feedback)
+        flash('success add feedback', 'success')
+        db.session.commit()
+        return redirect(url_for('home'))
+    return render_template('products/contact.html', form=forms)
