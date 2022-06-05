@@ -18,7 +18,12 @@
                         <th>{{ order.invoice }}</th>
                         <th>{{ order.status }}</th>
                         <th>{{ order.date_created }}</th>
-                        <th><a href="{{ url_for('orderss',invoice=order.invoice) }}" class="btn btn-info">View</a>
+                        <th>
+                            {% if order.status == "Paid" %}
+                            <a href="{{ url_for('orderss',invoice=order.invoice) }}" class="btn btn-success">View</a>
+                            {% else %}
+                            <a href="{{ url_for('orderss',invoice=order.invoice) }}" class="btn btn-info">View</a>
+                            {% endif %}
                         </th>
                         </tbody>
                     {% endfor %}

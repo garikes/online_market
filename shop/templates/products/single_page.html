@@ -42,40 +42,40 @@
                 </div>
             </div>
             <section class="offset-md-1 col-md-5 item__description">
-                <p class="page__back">Go back</p>
+                <a href="{{ url_for('home') }}"><p class="page__back">Go back</p></a>
                 <h3 class="order__title">{{ product.name }}</h3>
 
                 <p class="order__descr">{{ product.desc }}</p>
+                <div class="order__total">
+                    {% if product.discount > 0 %}
+                        <p> ${{ product.price - product.price * 1 / 100 * product.discount }}
+                            <span>${{ product.price }}</span> {{ product.discount }}% Off</p>
+                    {% else %}
+                        <p> ${{ product.price }}</p>
+                    {% endif %}
+                </div>
 
                 <form action="{{ url_for('addcard') }}" method="post">
-                    <div class="order__total">
-                        {% if product.discount > 0 %}
-                            <p> ${{ product.price - product.price * 1 / 100 * product.discount }}
-                                <span>${{ product.price }}</span> {{ product.discount }}% Off</p>
-                        {% else %}
-                            <p> ${{ product.price }}</p>
-                        {% endif %}
-                    </div>
 
                     <input type="hidden" name="product_id" value="{{ product.id }}">
                     <label class="order__quantity" for="quantity">Quantity</label>
                     <div class="quantity buttons_added">
                         <input type="button" value="-" class="minus">
-                        <input type="number" step="1" min="1" max="{{ product.stock }}" name="quantity" value="1"
+                        <input type="number" step="1" min="1" max="{{ product.stock }}" id="quantity" name="quantity" value="1"
                                title="Qty"
                                class="input-text qty text" size="4" pattern="" inputmode="">
                         <input type="button" value="+" class="plus">
                     </div>
                     <div>
                         {% set colors = product.colors.split(',') %}
-                        <p class="order__colors">Select Color</p>
+                        <label class="order__colors" for="colors">Select Color</label>
 
                         <div class="color-choose">
                             {% for color in colors %}
                                 {% set col = color.split(':') %}
                                 <div>
-                                    <input data-image="red" type="radio" id="{{ col[0] }}"
-                                           name="color" value="{{ col[0] }}">
+                                    <input type="radio" id="{{ col[0] }}"
+                                           name="colors" value="{{ col[0] }}">
                                     <label for="{{ col[0] }}">
                                         <span style="background-color: {{ col[0] }}"></span>
                                     </label>
@@ -83,7 +83,7 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-warning order__submit">Add to Cart</button>
+                    <button type="submit" class="btn btn-sm btn-warning order__submit">Add to Cart</button>
                 </form>
 
             </section>
@@ -430,3 +430,4 @@
     </style>
 
 {% endblock content %}
+

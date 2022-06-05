@@ -37,7 +37,7 @@
                     </li>
                 </ul>
 
-                <div style="margin-left: 600px">
+                <div style="margin-left: 550px; margin-top: 15px">
                     <form class="form-inline mt-2 mt-md-0" action="{{url_for('result')}}">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -60,7 +60,7 @@
                     <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;">
                         Discount {{product.discount}}%</h5>
                     {% endif %}
-                    <h5 class="text-center">{{product.name}}</h5>
+                    <h5 style="height: 45px" class="text-center">{{product.name}}</h5>
                     <p class="text-center">Price ${{product.price}}</p>
                 </div>
                 <div class="card-footer">
