@@ -68,7 +68,7 @@
                         {% endif %}
                         {% if brand.has_next %}
                             <a href="{{ url_for('get_brand',id=get_brand.id, page=brand.next_num) }}"
-                               class="btn btn-sm btn-outline-info">next</a>
+                               class="btn btn-sm btn-outline-info">Next</a>
                         {% endif %}
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                     <div class="col text-center">
                         {% if get_cat_prod.has_prev %}
                             <a href="{{ url_for('get_category',id=get_cat.id, page=get_cat_prod.prev_num) }}"
-                               class="btn btn-sm btn-outline-info">previus</a>
+                               class="btn btn-sm btn-outline-info">Previous</a>
                         {% endif %}
                         {% if get_cat_prod.total > 8 %}
                             {% for page_num in get_cat_prod.iter_pages(left_edge=1, right_edge=2, left_current=1,right_current=2) %}
@@ -132,8 +132,8 @@
                             {% endfor %}
                         {% endif %}
                         {% if get_cat_prod.has_next %}
-                            <a href="{{ url_for('home', page=get_cat_prod.next_num) }}"
-                               class="btn btn-sm btn-outline-info">next</a>
+                            <a href="{{ url_for('get_category', id=get_cat.id, page=get_cat_prod.next_num) }}"
+                               class="btn btn-sm btn-outline-info">Next</a>
                         {% endif %}
                     </div>
                 </div>
@@ -178,7 +178,7 @@
                 <div class="row mt-4">
                     <div class="col text-center">
                         {% if products.has_prev %}
-                            <a href="{{ url_for('home', page=products.prev_num) }}" class="btn btn-sm btn-outline-info">previus</a>
+                            <a href="{{ url_for('home', page=products.prev_num) }}" class="btn btn-sm btn-outline-info">Previous</a>
                         {% endif %}
                         {% if products.total> 8 %}
                             {% for page_num in products.iter_pages(left_edge=1, right_edge=2, left_current=1,right_current=2) %}
@@ -196,7 +196,7 @@
                             {% endfor %}
                         {% endif %}
                         {% if products.has_next %}
-                            <a href="{{ url_for('home', page=products.next_num) }}" class="btn btn-sm btn-outline-info">next</a>
+                            <a href="{{ url_for('home', page=products.next_num) }}" class="btn btn-sm btn-outline-info">Next</a>
                         {% endif %}
                     </div>
                 </div>

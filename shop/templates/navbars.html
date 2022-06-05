@@ -23,7 +23,7 @@
                 <a href="{{ url_for('profile_info') }}"
                    class="nav-link-username">{{ current_user.first_name }} {{ current_user.last_name }}</a>
                 <button class="nav__item btn-login">
-                    <a href="{{ url_for('customer_logout') }}" class="nav-link">Logout</a>
+                    <a data-toggle="modal" data-target="#exampleModal" class="nav-link">Logout</a>
                 </button>
             {% else %}
                 <button class="nav__item btn-sign-up">
@@ -41,7 +41,29 @@
         </form>
     </div>
 
+
 </header>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="">Are you sure to exit?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a href="{{url_for('customer_logout')}}"><button class="btn btn-danger">Logout</button></a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
