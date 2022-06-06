@@ -1,20 +1,30 @@
 {% extends "layout.html"%}}
 {% block content %}
-<div class="text-center h1 text-danger">Register</div>
-<div class="container">
-    {% include '_messages.html'%}
-    {% from "_formhelpers.html" import render_field %}
-    <form method="post" enctype="multipart/form-data">
-        <div>
-            {{ render_field(form.first_name, class="form-control") }}
-            {{ render_field(form.last_name, class="form-control") }}
-            {{ render_field(form.username, class="form-control") }}
-            {{ render_field(form.email, class="form-control") }}
-            {{ render_field(form.password, class="form-control") }}
-            {{ render_field(form.confirm, class="form-control") }}
-            <input type="file" name="photo">
-        </div>
-        <p><input type=submit value=Register" class="btn btn-info mt-2"></p>
-    </form>
-</div>
+    <div style="margin: 10px 570px; text-align: center">
+        <main class="form-signin w-100 m-auto">
+            <img class="mb-4" src="../../static/icons/shopping-cart.png" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 fw-normal">Register</h1>
+            {% from "_formhelpers.html" import render_field %}
+            <div style="display: none">
+                {% include '_messages.html' %}
+            </div>
+            {{ form.csrf_token }}
+            <form method="post" enctype="multipart/form-data">
+
+                <div class="form-floating" style="text-align: left">
+                    {{ render_field(form.first_name, class="form-control")}}
+                    {{ render_field(form.last_name, class="form-control")}}
+                    {{ render_field(form.username,class="form-control")}}
+                    {{ render_field(form.email,class="form-control")}}
+                    {{ render_field(form.password, class="form-control")}}
+                    {{ render_field(form.confirm ,class="form-control")}}
+                    <input type="file" name="photo">
+                </div>
+
+                <div style="margin-top: 10px; width: 285px">
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+                </div>
+            </form>
+        </main>
+    </div>
 {% endblock %}

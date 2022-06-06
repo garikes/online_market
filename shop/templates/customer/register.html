@@ -1,39 +1,36 @@
 {% extends "layout.html" %}
 {% block content %}
 {% from "_formhelpers.html" import render_field %}
-<div class="container" style="margin-top: 100px; margin-bottom: 30px">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <h1 class="bg-info text-center">Register</h1>
-        </div>
-        <div class="col-md-2"></div>
+    <div style="margin: 10px 0; text-align: center">
+        <main class="form-signin w-100 m-auto">
+            <img class="mb-4" src="../../static/icons/shopping-cart.png" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 fw-normal">Register</h1>
+            {% from "_formhelpers.html" import render_field %}
+            <div style="display: none">
+                {% include '_messages.html' %}
+            </div>
+            {{ form.csrf_token }}
+            <form method="post">
+                <div class="form-floating" style="text-align: left; margin-left: 380px; width: 285px">
+                    {{ render_field(form.first_name, class="form-control")}}
+                    {{ render_field(form.last_name, class="form-control")}}
+                    {{ render_field(form.username,class="form-control")}}
+                    {{ render_field(form.email,class="form-control")}}
+                    {{ render_field(form.password, class="form-control")}}
+                    {{ render_field(form.confirm ,class="form-control")}}
+                    {{ form.profile() }}
+                </div>
+                <div class="form-floating" style="text-align: left; margin-left: 780px; margin-top: -500px; width: 285px">
+                    {{ render_field(form.country, class="form-control")}}
+                    {{ render_field(form.city, class="form-control")}}
+                    {{ render_field(form.contact,class="form-control")}}
+                    {{ render_field(form.address,class="form-control")}}
+                </div>
+
+                <div style="margin-top: 215px; margin-left: 570px; width: 285px">
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+                </div>
+            </form>
+        </main>
     </div>
-    <form action="" method="post">
-        {{ form.csrf_token }}
-        <div class="row ">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-                {{ render_field(form.first_name, class="form-control")}}
-                {{ render_field(form.last_name, class="form-control")}}
-                {{ render_field(form.username,class="form-control")}}
-                {{ render_field(form.email,class="form-control")}}
-                {{ render_field(form.password, class="form-control")}}
-                {{ render_field(form.confirm ,class="form-control")}}
-                {{ form.profile() }}
-            </div>
-            <div class="col-md-4 text-center">
-                {{ render_field(form.country, class="form-control")}}
-                {{ render_field(form.city, class="form-control")}}
-                {{ render_field(form.contact,class="form-control")}}
-                {{ render_field(form.address,class="form-control")}}
-                {{ form.submit(class="btn btn-info ") }}
-                <a href="/" class=" btn btn-warning" style="margin-left: 50px">Cancel</a>
-            </div>
-            <div class="col-md-2"></div>
-
-        </div>
-    </form>
-
-</div>
 {% endblock content %}
