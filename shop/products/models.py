@@ -50,7 +50,7 @@ class Feedback(db.Model):
     status = db.Column(db.String(20), default='Not Sent', nullable=False)
     rating = db.Column(db.String(10), unique=False)
     Name = db.Column(db.String(30), unique=False)
-    email = db.Column(db.String(50), unique=True)
+    email = db.Column(db.String(50), unique=False)
     contact = db.Column(db.String(200), unique=False)
     company_name = db.Column(db.String(50), unique=False)
     feedback = db.Column(db.String(500), unique=False)
