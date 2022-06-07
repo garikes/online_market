@@ -1,14 +1,12 @@
 {% extends "layout.html" %}}
 {% block content %}
     <a href="{{ url_for('home') }}"><p class="page__back">Go back</p></a>
-    <div style="margin: 10px 570px; text-align: center">
+    < style="margin: 10px 570px; text-align: center">
         <main class="form-signin w-100 m-auto">
             <img class="mb-4" src="../../static/icons/shopping-cart.png" alt="" width="72" height="72">
             <h1 class="h3 mb-3 fw-normal">Register</h1>
             {% from "_formhelpers.html" import render_field %}
-            <div style="display: none">
-                {% include '_messages.html' %}
-            </div>
+                {% include '_messages.html' %}>
             {{ form.csrf_token }}
             <form method="post" enctype="multipart/form-data">
 

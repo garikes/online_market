@@ -6,10 +6,6 @@
             <a href="{{ url_for('home') }}"><p class="page__back">Go back</p></a>
             <img class="mb-4" src="../../static/icons/shopping-cart.png" alt="" width="72" height="72">
             <h1 class="h3 mb-3 fw-normal">Register</h1>
-            {% from "_formhelpers.html" import render_field %}
-            <div style="display: none">
-                {% include '_messages.html' %}
-            </div>
             {{ form.csrf_token }}
             <form method="post" style="margin-left: 60px">
                 <div class="form-floating" style="text-align: left; margin-left: 380px; width: 285px">
