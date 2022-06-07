@@ -1,5 +1,6 @@
-{% extends "layout.html"%}}
+{% extends "layout.html" %}}
 {% block content %}
+    <a href="{{ url_for('home') }}"><p class="page__back">Go back</p></a>
     <div style="margin: 10px 570px; text-align: center">
         <main class="form-signin w-100 m-auto">
             <img class="mb-4" src="../../static/icons/shopping-cart.png" alt="" width="72" height="72">
@@ -12,12 +13,12 @@
             <form method="post" enctype="multipart/form-data">
 
                 <div class="form-floating" style="text-align: left">
-                    {{ render_field(form.first_name, class="form-control")}}
-                    {{ render_field(form.last_name, class="form-control")}}
-                    {{ render_field(form.username,class="form-control")}}
-                    {{ render_field(form.email,class="form-control")}}
-                    {{ render_field(form.password, class="form-control")}}
-                    {{ render_field(form.confirm ,class="form-control")}}
+                    {{ render_field(form.first_name, class="form-control") }}
+                    {{ render_field(form.last_name, class="form-control") }}
+                    {{ render_field(form.username,class="form-control") }}
+                    {{ render_field(form.email,class="form-control") }}
+                    {{ render_field(form.password, class="form-control") }}
+                    {{ render_field(form.confirm ,class="form-control") }}
                     <input type="file" name="photo">
                 </div>
 
@@ -27,4 +28,16 @@
             </form>
         </main>
     </div>
+    <style>
+        .page__back {
+            margin-left: 10px;
+            text-transform: uppercase;
+            text-align: left;
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 500;
+            color: #080707;
+            letter-spacing: 1.5px;
+        }
+    </style>
 {% endblock %}
