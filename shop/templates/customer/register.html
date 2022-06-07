@@ -6,8 +6,8 @@
             <a href="{{ url_for('home') }}"><p class="page__back">Go back</p></a>
             <img class="mb-4" src="../../static/icons/shopping-cart.png" alt="" width="72" height="72">
             <h1 class="h3 mb-3 fw-normal">Register</h1>
-            {{ form.csrf_token }}
             <form method="post" style="margin-left: 60px">
+                {{ form.csrf_token }}
                 <div class="form-floating" style="text-align: left; margin-left: 380px; width: 285px">
                     {{ render_field(form.first_name, class="form-control") }}
                     {{ render_field(form.last_name, class="form-control") }}
@@ -23,10 +23,7 @@
                     {{ render_field(form.city, class="form-control") }}
                     {{ render_field(form.contact,class="form-control") }}
                     {{ render_field(form.address,class="form-control") }}
-                </div>
-
-                <div style="margin-top: 215px; margin-left: 570px; width: 285px">
-                    <input class="w-100 btn btn-lg btn-primary" type="submit" value="Register">
+                    {{ form.submit(class="w-100 btn btn-lg btn-primary ",style="margin-top: 215px; margin-left:-220px; width: 285px") }}
                 </div>
             </form>
         </main>
